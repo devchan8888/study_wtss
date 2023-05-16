@@ -1,0 +1,371 @@
+@charset "utf-8";
+
+/* Skip Navigation */
+#skip {
+  position: relative;
+}
+#skip a {
+  position: absolute;
+  left: 0px;
+  top: -35px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #333;
+  line-height: 30px;
+  text-align: center;
+}
+#skip a:active,
+#skip a:focus {
+  top: 0;
+}
+
+/* Layout */
+#wrap {
+}
+#header {
+  height: 325px;
+  background: url(../img/header_bg.jpg) center top repeat-x;
+}
+#contents {
+}
+#footer {
+  height: 200px;
+  background-color: #333;
+}
+
+/* Container */
+.container {
+  width: 990px;
+  margin: 0 auto;
+  height: inherit;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Contents Layout */
+#cont_nav {
+  background-color: #f6fdff;
+}
+#cont_tit {
+  background-color: #eaf7fd;
+}
+#cont_ban {
+  background-color: #dceff7;
+}
+#cont_cont {
+  background-color: #f6fdff;
+}
+
+/* Header */
+.header {
+}
+.header .header-menu {
+  text-align: right;
+}
+.header .header-menu a {
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+}
+/* inline은 padding이 안먹음, a 태그는 inline 속성임, 오른쪽 정렬하기 위해서 block 속성을 같는 inline으로 만들어 준것임 */
+.header .header-menu a:hover {
+  color: #666;
+}
+.header .header-tit {
+  text-align: center;
+}
+.header .header-tit h1 {
+  background: #4aa8d4;
+  font-size: 28px;
+  padding: 5px 20px 6px 20px;
+  display: inline-block;
+  color: #fff;
+  margin-top: 70px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.header .header-tit a {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  padding: 5px 20px 6px 20px;
+  background: #4a98d4;
+  margin-top: -8px;
+}
+.header .header-icon {
+  text-align: center;
+  margin-top: 30px;
+}
+.header .header-icon a {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background: url(../img/icon.png);
+  margin: 0 5px;
+}
+.header .header-icon a.icon1 {
+  background-position: 0 0;
+}
+.header .header-icon a.icon2 {
+  background-position: 0 -60px;
+}
+.header .header-icon a.icon3 {
+  background-position: 0 -120px;
+}
+.header .header-icon a.icon4 {
+  background-position: 0 -180px;
+}
+
+.header .header-icon a.icon1:hover {
+  background-position: -60px 0;
+}
+.header .header-icon a.icon2:hover {
+  background-position: -60px -60px;
+}
+.header .header-icon a.icon3:hover {
+  background-position: -60px -120px;
+}
+.header .header-icon a.icon4:hover {
+  background-position: -60px -180px;
+}
+
+/* float: left로 인한 영역깨짐(height:0) 방지법
+  1. 깨지는 영역에 똑같이 float: left를 사용한다.
+    -> 그 아래 box들 모두 float: left를 써야하므로 좋지 못함
+  2. float의 성질을 차단하는 clear: both;를 사용한다.
+    -> 나중에 박스가 복잡하면 깨진 영역 확인이 어려워서 추천 안함
+  3. float을 사용한 상위 박스한테 overflow: hidden 사용
+    -> 완벽하지 않지만 많이 사용
+    -> 영역이 height:0 이 적용 안됨
+  4. clearfix를 사용함
+    -> 가장 좋은 방법 : 반응형에서 배울예정
+ */
+
+/* 전체 메뉴 */
+.nav {
+  overflow: hidden;
+  padding: 30px 0;
+}
+.nav div {
+} /* 자식의 자식 div 까지 다 해당됨*/
+.nav > div {
+  float: left;
+  width: 40%;
+} /* 바로 아래 자식 div만 선택*/
+.nav > div:last-child {
+  width: 20%;
+}
+.nav > div h3 {
+  font-size: 18px;
+  color: #25a2d0;
+  margin-bottom: 4px;
+}
+.nav > div ol {
+  overflow: hidden;
+}
+.nav > div ol li {
+  float: left;
+  width: 50%;
+}
+.nav > div.last ol li {
+  width: 100%;
+}
+.nav > div ol li a:hover {
+  text-decoration: underline;
+}
+
+/* Title */
+.tit {
+  position: relative;
+}
+.tit h2 {
+  font-size: 40px;
+  text-align: center;
+  padding: 5px 0;
+  letter-spacing: 2px;
+  color: #2c94c4;
+}
+.tit .btn {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  width: 60px;
+  height: 60px;
+  background: url(../img/icon.png) no-repeat 0 -600px;
+}
+
+/* 배너 */
+.banner {
+  position: relative;
+  padding: 24px 0 20px;
+}
+.banner > a {
+  position: absolute;
+  top: 0;
+  width: 43px;
+  height: 43px;
+  background-color: #ccc;
+  top: 60px;
+}
+.banner a.prev {
+  left: -80px;
+  background: url(../img/icon.png) no-repeat -150px 0;
+}
+.banner a.next {
+  right: -80px;
+  background: url(../img/icon.png) no-repeat -150px -43px;
+}
+.banner a.prev:hover {
+  background-position: -193px 0;
+}
+.banner a.next:hover {
+  background-position: -193px -43px;
+}
+.banner ul {
+  overflow: hidden;
+}
+.banner ul li {
+  float: left;
+  width: 330px;
+}
+.banner ul li:ban_img1 {
+  text-align: left;
+}
+.banner ul li:ban_img2 {
+  text-align: center;
+}
+.banner ul li:ban_img3 {
+  text-align: right;
+}
+.banner ul li img {
+  border: 4px solid #dcdcdc;
+}
+.banner ul li img:hover {
+  border-color: #98bdbd;
+}
+
+/* 컨텐츠 */
+.cont {
+  overflow: hidden;
+  padding-top: 30px;
+}
+.cont .column {
+  position: relative;
+  float: left;
+  width: 289px;
+  height: 363px;
+  margin: 0 30px 30px 0;
+  padding-right: 30px;
+}
+
+.cont .col1 {
+  border-right: 1px solid #c8c8c8;
+}
+.cont .col2 {
+  border-right: 1px solid #c8c8c8;
+}
+.cont .col3 {
+  margin-right: 0;
+  padding-right: 0;
+}
+.cont .col4 {
+  border-right: 1px solid #c8c8c8;
+}
+.cont .col5 {
+  border-right: 1px solid #c8c8c8;
+}
+.cont .col6 {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.cont .column .ico_img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(../img/icon.png) no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.cont .column .ico_tit {
+  padding-left: 70px;
+  font-size: 16px;
+  color: #2c94c4;
+}
+.cont .column .ico_desc {
+  padding-left: 70px;
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.cont .col1 .ico_img {
+  background-position: 0px -240px;
+}
+.cont .col2 .ico_img {
+  background-position: 0px -300px;
+}
+.cont .col3 .ico_img {
+  background-position: 0px -360px;
+}
+.cont .col4 .ico_img {
+  background-position: 0px -420px;
+}
+.cont .col5 .ico_img {
+  background-position: 0px -480px;
+}
+.cont .col6 .ico_img {
+  background-position: 0px -540px;
+}
+
+.cont .col1 .ico_img:hover {
+  background-position: -60px -240px;
+}
+.cont .col2 .ico_img:hover {
+  background-position: -60px -300px;
+}
+.cont .col3 .ico_img:hover {
+  background-position: -60px -360px;
+}
+.cont .col4 .ico_img:hover {
+  background-position: -60px -420px;
+}
+.cont .col5 .ico_img:hover {
+  background-position: -60px -480px;
+}
+.cont .col6 .ico_img:hover {
+  background-position: -60px -540px;
+}
+
+/* 게시판 */
+.notice {
+  position: relative;
+}
+.notice h4 {
+  font-size: 14px;
+  color: #0093bd;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+.notice ul {
+}
+.notice ul li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: url(../img/dot.gif) no-repeat 0 10px;
+  padding-left: 8px;
+}
+.notice ul li a {
+  font-size: 12px;
+}
+.notice a.more {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  background: url(../img/icon.png) no-repeat -150px -90px;
+  width: 17px;
+  height: 17px;
+}
