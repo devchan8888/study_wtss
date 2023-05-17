@@ -52,6 +52,12 @@ table {
   line-height: 1.5;
 }
 
+/* 폰트 스타일 초기화 */
+em,
+address {
+  font-style: normal;
+}
+
 /* 블릿기호 초기화 */
 dl,
 ul,
@@ -71,6 +77,17 @@ h6 {
   font-size: 13px;
   color: #222;
   font-weight: normal;
+}
+
+/* 테두리 초기화 */
+img,
+fieldset {
+  border: 0 none;
+}
+
+/* 버튼 초기화 */
+button {
+  border: 0 none;
 }
 
 /* IR 효과 */
@@ -99,4 +116,39 @@ h6 {
   height: 0;
   line-height: 0;
   text-indent: -9999px;
+}
+
+/* margin, padding */
+.mt10 {
+  margin-top: 10px !important;
+}
+.mt15 {
+  margin-top: 15px !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mt25 {
+  margin-top: 25px !important;
+}
+.mt30 {
+  margin-top: 30px !important;
+}
+.mt35 {
+  margin-top: 35px !important;
+}
+.mt40 {
+  margin-top: 40px !important;
+}
+.mt45 {
+  margin-top: 45px !important;
+}
+.mt50 {
+  margin-top: 50px !important;
+}
+.mt55 {
+  margin-top: 55px !important;
+}
+.mt60 {
+  margin-top: 60px !important;
 }
