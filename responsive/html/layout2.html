@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {width: 100%; margin: 0 auto;}
+        header {width: 100%; height: 150px; background: #b2dfdb ;}
+        aside {float: left; width: 30%; height: 800px; background: #80cbc4;}
+        section {float: left; width: 40%; height: 800px; background: #4db6ac;}
+        article {float: left; width: 30%; height: 800px; background: #26a69a;}
+        footer {clear: both; width: 100%; height: 150px; background: #009688;}
+
+        /* 화면 너비 0 ~ 1500 */
+        @media (max-width: 1520px) {
+            aside {width: 40%;}
+            section {width: 60%;}
+            article {float: none; clear: both; width: 100%; height: 300px;}
+        }
+        /* 화면 너비 0 ~ 1200 */
+        @media (max-width: 1200px) {
+            section {width: 100%;}
+            aside {float: none; clear: both; width: 100%; height: 300px;}
+            article {float: none; clear: both; width: 100%; height: 300px;}
+        }
+        /* 화면 너비 0 ~ 768 */
+        @media (max-width: 768px) {
+            header {height: 300px;}
+            aside {height: 200px;}
+            section {height: 200px;}
+        }
+
+
+    </style>
+
+    <title>Layout</title>
+</head>
+<body>
+    <!-- 컬러 참고 사이트 https://materializecss.com/color.html  -->
+    <div id="wrap">
+        <header></header>
+        <aside></aside>
+        <section></section>
+        <article></article>
+        <footer></footer>
+    </div>
+</body>
+</html>
