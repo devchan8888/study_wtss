@@ -84,8 +84,25 @@ button {
 }
 
 /* 반응형 이미지 */
-img {
+img,
+video {
   width: 100%;
+}
+
+/* clearfix */
+/* float left 했을 때 잡아주기 위한 것 인데 지금까지는 overflow : hidden을 줬음
+그런데 가끔 overflow : hidden을 주지 못하는 상황이 있음 그럴때 clearfix 사용 */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: block;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
 }
 
 /* IR 효과 */
